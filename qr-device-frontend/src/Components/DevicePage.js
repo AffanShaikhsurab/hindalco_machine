@@ -13,7 +13,11 @@ const DevicePage = () => {
 
     useEffect(() => {
         setLoading(true);
+<<<<<<< HEAD
         fetch("https://hindalco-machine.onrender.com/devices")
+=======
+        fetch("http://localhost:7349/devices")
+>>>>>>> 057ccdc9431877bc9dc1e00a86944c77dd2c0af4
             .then(res => {
                 if (!res.ok) {
                     throw new Error("Failed to fetch devices");
@@ -246,6 +250,7 @@ const DevicePage = () => {
                                     transition={{ type: "spring", stiffness: 300 }}
                                     layout
                                 >
+<<<<<<< HEAD
                                     <a 
                                         href={getDeviceUrl(device._id)}
                                         target="_blank"
@@ -262,6 +267,16 @@ const DevicePage = () => {
                                     <div className="qr-actions">
                                         <a 
                                             href={`https://hindalco-machine.onrender.com/device/qr/${device._id}`}
+=======
+                                    <img 
+                                        src={`http://localhost:7349/device/qr/${device._id}`}
+                                        alt="QR Code" 
+                                        className="qr-image" 
+                                    />
+                                    <div className="qr-actions">
+                                        <a 
+                                            href={`http://localhost:7349/device/qr/${device._id}`}
+>>>>>>> 057ccdc9431877bc9dc1e00a86944c77dd2c0af4
                                             download={`qr-${device.name}.png`}
                                             className="download-link"
                                         >

@@ -12,7 +12,11 @@ const DeviceTemplate = () => {
 
   useEffect(() => {
     setLoading(true);
+<<<<<<< HEAD
     axios.get(`https://hindalco-machine.onrender.com/device/${id}`)
+=======
+    axios.get(`http://localhost:7349/device/${id}`)
+>>>>>>> 057ccdc9431877bc9dc1e00a86944c77dd2c0af4
       .then(response => {
         setDevice(response.data);
         setLoading(false);

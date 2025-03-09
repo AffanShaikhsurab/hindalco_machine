@@ -14,7 +14,11 @@ function App() {
 
     useEffect(() => {
         setLoading(true);
+<<<<<<< HEAD
         axios.get("https://hindalco-machine.onrender.com/devices")
+=======
+        axios.get("http://localhost:7349/devices")
+>>>>>>> 057ccdc9431877bc9dc1e00a86944c77dd2c0af4
             .then(response => {
                 setDevices(response.data);
                 setLoading(false);
@@ -154,6 +158,7 @@ function App() {
 
                                         {selectedDevice === device._id && (
                                             <div className="qr-container">
+<<<<<<< HEAD
                                                 <h4>Scan or click to view device details</h4>
                                                 <a 
                                                     href={getDeviceUrl(device._id)}
@@ -167,6 +172,15 @@ function App() {
                                                     />
                                                 </a>
                                                 <p className="qr-help">Point your device camera or click the QR code</p>
+=======
+                                                <h4>Scan to view device details</h4>
+                                                <img 
+                                                    src={`http://localhost:7349/devices/qr/${device._id}`} 
+                                                    alt="QR Code" 
+                                                    className="qr-image"
+                                                />
+                                                <p className="qr-help">Point your device camera at this QR code</p>
+>>>>>>> 057ccdc9431877bc9dc1e00a86944c77dd2c0af4
                                             </div>
                                         )}
                                     </div>
