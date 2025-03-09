@@ -51,7 +51,7 @@ function App() {
     };
 
     const getDeviceUrl = (deviceId) => {
-        return `https://hindalco-machine.vercel.app/device-view/${deviceId}`;
+        return `https://hindalco-machine.onrender.com/device-view/${deviceId}`;
     };
 
     return (
