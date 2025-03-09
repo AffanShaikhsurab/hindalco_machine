@@ -8,20 +8,50 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const startServer = async () => {
-  try {
-    await mongoose.connect("mongodb+srv://affanpics:affanaffan@cluster0.jafgy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/test", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },     console.log('Connected to MongoDB')
-);
-
-    app.listen(5000, () => {
-      console.log(`Server running on port 5000`);
+// Function to kill process on port 5000 if exists
+const killPort = () => {
+    return new Promise((resolve, reject) => {
+        const exec = require('child_process').exec;
+        exec('netstat -ano | findstr :5000', (error, stdout, stderr) => {
+            if (stdout) {
+                // Extract PID from the output
+                const pid = stdout.split(' ').filter(Boolean).pop();
+                if (pid) {
+                    exec(`taskkill /F /PID ${pid}`, (err) => {
+                        if (err) {
+                            console.log('No process was running on port 5000');
+                        } else {
+                            console.log('Successfully killed process on port 5000');
+                        }
+                        resolve();
+                    });
+                } else {
+                    resolve();
+                }
+            } else {
+                resolve();
+            }
+        });
     });
-  } catch (error) {
-    console.error('Error connecting to MongoDB', error);
-  }
+};
+
+const startServer = async () => {
+    try {
+        // Kill existing process on port 5000
+        await killPort();
+
+        await mongoose.connect("mongodb+srv://affanpics:affanaffan@cluster0.jafgy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/test", {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('Connected to MongoDB');
+
+        app.listen(5000, () => {
+            console.log(`Server running on port 5000`);
+        });
+    } catch (error) {
+        console.error('Error starting server:', error);
+    }
 };
 
 startServer();
