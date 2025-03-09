@@ -14,7 +14,7 @@ function App() {
 
     useEffect(() => {
         setLoading(true);
-        axios.get("http://localhost:5000/devices")
+        axios.get("http://localhost:7349/devices")
             .then(response => {
                 setDevices(response.data);
                 setLoading(false);
