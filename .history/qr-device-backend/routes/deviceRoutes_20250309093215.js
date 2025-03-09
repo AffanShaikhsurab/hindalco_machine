@@ -45,7 +45,7 @@ router.get("/qr/:id", async (req, res) => {
         if (!device) return res.status(404).json({ message: "Device not found" });
 
         // Create a URL that points to our template website with device ID
-        const qrData = `https://hindalco-machine.vercel.app/device-view/${device._id}`;
+        const qrData = `http://localhost:3000/device-view/${device._id}`;
         
         // Generate QR image
         const qrCode = qr.image(qrData, { type: "png" });
