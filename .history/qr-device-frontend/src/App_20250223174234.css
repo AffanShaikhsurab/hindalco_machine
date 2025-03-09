@@ -1,0 +1,63 @@
+/* App.css */
+
+/* Center the container */
+.container {
+  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+h1 {
+  color: #333;
+}
+
+/* Device card styling */
+.device-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.device-card:hover {
+  transform: scale(1.02);
+}
+
+/* Device name */
+.device-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* QR Button styling */
+.qr-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.qr-btn:hover {
+  background-color: #0056b3;
+}
+
+/* QR Code container */
+.qr-container {
+  margin-top: 15px;
+}
+
+.qr-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
