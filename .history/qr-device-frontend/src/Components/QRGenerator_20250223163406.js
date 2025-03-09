@@ -4,7 +4,7 @@ function QRGenerator({ deviceId }) {
     return (
         <div>
             <h3>Scan the QR Code</h3>
-            <img src={`http://localhost:7349/devices/qr/${deviceId}`} alt="QR Code" />
+            <img src={`http://localhost:5000/devices/qr/${deviceId}`} alt="QR Code" />
         </div>
     );
 }

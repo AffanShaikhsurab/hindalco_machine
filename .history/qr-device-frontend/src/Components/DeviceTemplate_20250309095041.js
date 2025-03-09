@@ -12,7 +12,7 @@ const DeviceTemplate = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:7349/device/${id}`)
+    axios.get(`http://localhost:5000/device/${id}`)
       .then(response => {
         setDevice(response.data);
         setLoading(false);

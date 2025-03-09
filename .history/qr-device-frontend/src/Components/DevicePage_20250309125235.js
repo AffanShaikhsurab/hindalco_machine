@@ -13,7 +13,7 @@ const DevicePage = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch("http://localhost:7349/devices")
+        fetch("http://localhost:5000/devices")
             .then(res => {
                 if (!res.ok) {
                     throw new Error("Failed to fetch devices");
@@ -243,13 +243,13 @@ const DevicePage = () => {
                                     layout
                                 >
                                     <img 
-                                        src={`http://localhost:7349/device/qr/${device._id}`}
+                                        src={`http://localhost:5000/device/qr/${device._id}`}
                                         alt="QR Code" 
                                         className="qr-image" 
                                     />
                                     <div className="qr-actions">
                                         <a 
-                                            href={`http://localhost:7349/device/qr/${device._id}`}
+                                            href={`http://localhost:5000/device/qr/${device._id}`}
                                             download={`qr-${device.name}.png`}
                                             className="download-link"
                                         >
