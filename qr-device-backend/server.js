@@ -16,8 +16,8 @@ const startServer = async () => {
     },     console.log('Connected to MongoDB')
 );
 
-    app.listen(5000, () => {
-      console.log(`Server running on port 5000`);
+    app.listen(7349, () => {
+      console.log(`Server running on port 7349`);
     });
   } catch (error) {
     console.error('Error connecting to MongoDB', error);
@@ -35,7 +35,7 @@ app.post("/add-device", async (req, res) => {
 
         // Generate a QR code that points to our frontend device viewer
         // IMPORTANT: Change this URL to your production URL when deployed
-        const qrCodeData = `http://localhost:3000/device-tools/view/${newDevice._id}`;
+        const qrCodeData = `https://hindalco-machine.vercel.app/device-tools/view/${newDevice._id}`;
         
         const qrCodeImage = await QRCode.toDataURL(qrCodeData);
 
