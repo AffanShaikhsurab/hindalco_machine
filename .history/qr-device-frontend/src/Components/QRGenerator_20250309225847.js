@@ -13,7 +13,7 @@ function QRGenerator({ deviceId }) {
                 rel="noopener noreferrer"
             >
                 <img 
-                    src={`https://hindalco-machine.onrender.com/devices/qr/${deviceId}`} 
+                    src={`http://localhost:7349/devices/qr/${deviceId}`} 
                     alt="QR Code" 
                     className="qr-code-image"
                 />

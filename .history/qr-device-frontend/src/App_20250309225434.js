@@ -14,7 +14,7 @@ function App() {
 
     useEffect(() => {
         setLoading(true);
-        axios.get("https://hindalco-machine.onrender.com/devices")
+        axios.get("http://localhost:7349/devices")
             .then(response => {
                 setDevices(response.data);
                 setLoading(false);
@@ -161,7 +161,7 @@ function App() {
                                                     rel="noopener noreferrer"
                                                 >
                                                     <img 
-                                                        src={`https://hindalco-machine.onrender.com/devices/qr/${device._id}`} 
+                                                        src={`http://localhost:7349/devices/qr/${device._id}`} 
                                                         alt="QR Code" 
                                                         className="qr-image"
                                                     />
