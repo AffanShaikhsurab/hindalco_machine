@@ -152,7 +152,7 @@ function App() {
                                             <div className="qr-container">
                                                 <h4>Scan to view device details</h4>
                                                 <img 
-                                                    src={`http://localhost:5000/devices/qr/${device._id}`} 
+                                                    src={`http://localhost:7349/devices/qr/${device._id}`} 
                                                     alt="QR Code" 
                                                     className="qr-image"
                                                 />
